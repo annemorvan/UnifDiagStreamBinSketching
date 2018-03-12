@@ -151,19 +151,19 @@ def test_impact_where_R():
 
     fig1 = plt.figure()
     ax1 = fig1.add_subplot(111)
-    ax1.set_title('TRY1, before dediagonalization')
+    ax1.set_title('TRY 1, before dediagonalization')
     cax1 = ax1.imshow(CovV, cmap=cm.coolwarm)  
     fig1.colorbar(cax1, ticks=[-1, 0, 1])
     fig1.show()    
     
     fig2 = plt.figure()
     ax2 = fig2.add_subplot(111)
-    ax2.set_title('TRY1, after dediagonalization -> \ndiagonal coef. should be uniform.')
+    ax2.set_title('TRY 1, after dediagonalization -> \ndiagonal coef. should be uniform.')
     cax2 = ax2.imshow(CovV_unifDiag, cmap=cm.coolwarm)    
     fig2.colorbar(cax2, ticks=[-1, 0, 1])
     fig2.show()    
 
-    print('TRY 2, X is c x n')
+    print('\nTRY 2, X is c x n')
     X = np.random.normal(0.0, 1.0, (c, n))
     CovV = np.dot( X, X.T)
     assert CovV.shape == (c,c)
@@ -182,7 +182,7 @@ def test_impact_where_R():
     
     fig2 = plt.figure()
     ax2 = fig2.add_subplot(111)
-    ax2.set_title('TRY3, after dediagonalization -> \ndiagonal coef. should be uniform.')
+    ax2.set_title('TRY 2, after dediagonalization -> \ndiagonal coef. should be uniform.')
     cax2 = ax2.imshow(CovV_unifDiag, cmap=cm.coolwarm)    
     fig2.colorbar(cax2, ticks=[-1, 0, 1])
     fig2.show()   
@@ -193,5 +193,6 @@ def test_impact_where_R():
     
 if __name__ == '__main__':
 
-#    test_unifDiag()
+    test_unifDiag()
+    print('\n*\n')
     test_impact_where_R()
